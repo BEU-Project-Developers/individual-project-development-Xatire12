@@ -16,10 +16,11 @@ namespace c__final_app
         public Selling_Form()
         {
             InitializeComponent();
-           
+
         }
-       
+
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\c#_final_app\c#_final_app\Final.mdf;Integrated Security=True");
+       try{
         private void populate()
         {
             Con.Open();
@@ -30,7 +31,8 @@ namespace c__final_app
             sda.Fill(ds);
             ProdDGV.DataSource = ds.Tables[0];
             Con.Close();
-        }
+        } }
+      catch
         private void populatebills()
         {
             Con.Open();
