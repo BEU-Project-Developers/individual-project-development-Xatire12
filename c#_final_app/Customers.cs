@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+using System.Diagnostics.Eventing.Reader;
 
 namespace c__final_app
 {
@@ -20,6 +21,13 @@ namespace c__final_app
         }
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\c#_final_app\c#_final_app\Final.mdf;Integrated Security=True");
 
+        private bool IsSeller()
+        {
+            // Check if the current user is a seller
+            // You can use the Sellername or any other criteria to determine this
+            // For example, you can check if the user exists in the SellersTbl
+            return !string.IsNullOrEmpty(Login.Sellername);
+        }
         //logout ucun
         private void Selling_form_logout_Click(object sender, EventArgs e)
         {
@@ -38,24 +46,43 @@ namespace c__final_app
         //product formuna kecid ucun
         private void Seller_form_products_Click(object sender, EventArgs e)
         {
-            Product_Form product=new Product_Form();
+            if (!IsSeller()) { 
+            Product_Form product = new Product_Form();
             this.Hide();
-            product.Show();
+            product.Show(); }
+            else{
+                MessageBox.Show("You do not have permission to access this form.");
+            }
         }
-        
-        //selling formuna kedic ucun
+       
+   
+        //category formuna kedic ucun
         private void Selling_Form_category_Click(object sender, EventArgs e)
         {
-            Category_Form category=new Category_Form();
-            this.Hide();    
-            category.Show();
+            if (!IsSeller())
+            {
+                Category_Form category = new Category_Form();
+                this.Hide();
+                category.Show();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission to access this form.");
+            }
         }
         //seller formuna kecid ucun
         private void guna2Button7_Click(object sender, EventArgs e)
         {
-            Seller_Form sell=new Seller_Form();
-            this.Hide();
-            sell.Show();
+            if (!IsSeller())
+            {
+                Seller_Form sell = new Seller_Form();
+                this.Hide();
+                sell.Show();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission to access this form.");
+            }
         }
 
        //Customer table dan melumatlari cekir ve customerDGV ni hemin melumatlarla doldurur

@@ -16,8 +16,6 @@ namespace c__final_app
         public Selling_Form()
         {
             InitializeComponent();
-            
-
         }
        
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\c#_final_app\c#_final_app\Final.mdf;Integrated Security=True");
@@ -67,26 +65,56 @@ namespace c__final_app
         {
             Application.Exit();
         }
+        private bool IsSeller()
+        {
+            // Check if the current user is a seller
+            // You can use the Sellername or any other criteria to determine this
+            // For example, you can check if the user exists in the SellersTbl
+            return !string.IsNullOrEmpty(Login.Sellername);
+        }
 
         private void Selling_form_sellers_Click(object sender, EventArgs e)
         {
-            Seller_Form seller_Form = new Seller_Form();
-            seller_Form.Show();
-            this.Hide();
+            if (!IsSeller())
+            {
+                Seller_Form seller_Form = new Seller_Form();
+                seller_Form.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission to access this form.");
+            }
         }
 
         private void Selling_form_products_Click(object sender, EventArgs e)
         {
-            Product_Form product_Form = new Product_Form();
-            product_Form.Show();
-            this.Hide();
+            if (!IsSeller())
+            {
+                Product_Form product_Form = new Product_Form();
+                product_Form.Show();
+                this.Hide();
+            }
+            else
+            {
+             MessageBox.Show("You do not have permission to access this form.");
+            }
+
+                    
         }
 
         private void Selling_form_category_Click(object sender, EventArgs e)
         {
-            Category_Form category_Form = new Category_Form();
-            category_Form.Show();
-            this.Hide();
+            if (!IsSeller())
+            {
+                Category_Form category_Form = new Category_Form();
+                category_Form.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission to access this form.");
+            }
         }
 
         private void Selling_form_logout_Click(object sender, EventArgs e)
@@ -130,7 +158,7 @@ namespace c__final_app
                 }
                 else
                 {
-                    MessageBox.Show("Xəta: Məhsul miqdarı çoxdur və ya 0-dır!");
+                    MessageBox.Show("Eroor: Məhsul miqdarı çoxdur və ya 0-dır!");
                 }
             }
         }
