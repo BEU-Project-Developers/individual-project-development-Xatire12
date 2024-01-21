@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Form));
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
@@ -47,6 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.productreset = new Guna.UI2.WinForms.Guna2Button();
             this.prodrefresh = new Guna.UI2.WinForms.Guna2Button();
             this.categorycb_search = new System.Windows.Forms.ComboBox();
             this.categorycb = new System.Windows.Forms.ComboBox();
@@ -55,6 +58,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton5 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton6 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton7 = new Guna.UI2.WinForms.Guna2ImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsDGV)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,13 +76,14 @@
             this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button8.FillColor = System.Drawing.Color.White;
+            this.guna2Button8.FillColor = System.Drawing.Color.LightGray;
             this.guna2Button8.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button8.ForeColor = System.Drawing.Color.DarkOrange;
+            this.guna2Button8.HoverState.FillColor = System.Drawing.Color.Gray;
             this.guna2Button8.HoverState.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button8.Location = new System.Drawing.Point(4, 622);
+            this.guna2Button8.Location = new System.Drawing.Point(71, 606);
             this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.Size = new System.Drawing.Size(130, 30);
+            this.guna2Button8.Size = new System.Drawing.Size(130, 46);
             this.guna2Button8.TabIndex = 20;
             this.guna2Button8.Text = "Logout";
             this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
@@ -88,23 +97,47 @@
             this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.White;
+            this.guna2Button6.FillColor = System.Drawing.Color.LightGray;
             this.guna2Button6.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button6.ForeColor = System.Drawing.Color.DarkOrange;
+            this.guna2Button6.HoverState.FillColor = System.Drawing.Color.Gray;
             this.guna2Button6.HoverState.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button6.Location = new System.Drawing.Point(4, 223);
+            this.guna2Button6.Location = new System.Drawing.Point(71, 259);
             this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(130, 30);
+            this.guna2Button6.Size = new System.Drawing.Size(130, 46);
             this.guna2Button6.TabIndex = 18;
             this.guna2Button6.Text = "Selling";
             this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // ProductsDGV
             // 
+            this.ProductsDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ProductsDGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ProductsDGV.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.ProductsDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.ProductsDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProductsDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ProductsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProductsDGV.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ProductsDGV.EnableHeadersVisualStyles = false;
             this.ProductsDGV.Location = new System.Drawing.Point(351, 70);
             this.ProductsDGV.Name = "ProductsDGV";
+            this.ProductsDGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.ProductsDGV.RowHeadersVisible = false;
             this.ProductsDGV.RowHeadersWidth = 51;
             this.ProductsDGV.RowTemplate.Height = 24;
             this.ProductsDGV.Size = new System.Drawing.Size(506, 509);
@@ -117,14 +150,14 @@
             this.product_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.product_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.product_delete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.product_delete.FillColor = System.Drawing.Color.White;
+            this.product_delete.FillColor = System.Drawing.Color.LightGray;
             this.product_delete.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product_delete.ForeColor = System.Drawing.Color.DarkOrange;
-            this.product_delete.HoverState.FillColor = System.Drawing.Color.Red;
-            this.product_delete.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.product_delete.Location = new System.Drawing.Point(236, 350);
+            this.product_delete.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.product_delete.HoverState.ForeColor = System.Drawing.Color.Red;
+            this.product_delete.Location = new System.Drawing.Point(215, 350);
             this.product_delete.Name = "product_delete";
-            this.product_delete.Size = new System.Drawing.Size(110, 33);
+            this.product_delete.Size = new System.Drawing.Size(112, 33);
             this.product_delete.TabIndex = 15;
             this.product_delete.Text = "Delete";
             this.product_delete.Click += new System.EventHandler(this.product_delete_Click);
@@ -135,14 +168,14 @@
             this.product_update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.product_update.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.product_update.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.product_update.FillColor = System.Drawing.Color.White;
+            this.product_update.FillColor = System.Drawing.Color.LightGray;
             this.product_update.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product_update.ForeColor = System.Drawing.Color.DarkOrange;
-            this.product_update.HoverState.FillColor = System.Drawing.Color.Red;
-            this.product_update.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.product_update.Location = new System.Drawing.Point(122, 350);
+            this.product_update.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.product_update.HoverState.ForeColor = System.Drawing.Color.Red;
+            this.product_update.Location = new System.Drawing.Point(24, 405);
             this.product_update.Name = "product_update";
-            this.product_update.Size = new System.Drawing.Size(108, 33);
+            this.product_update.Size = new System.Drawing.Size(112, 33);
             this.product_update.TabIndex = 14;
             this.product_update.Text = "Update";
             this.product_update.Click += new System.EventHandler(this.product_update_Click);
@@ -154,12 +187,12 @@
             this.Product_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Product_add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Product_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Product_add.FillColor = System.Drawing.Color.White;
+            this.Product_add.FillColor = System.Drawing.Color.LightGray;
             this.Product_add.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Product_add.ForeColor = System.Drawing.Color.DarkOrange;
-            this.Product_add.HoverState.FillColor = System.Drawing.Color.Red;
-            this.Product_add.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Product_add.Location = new System.Drawing.Point(4, 350);
+            this.Product_add.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.Product_add.HoverState.ForeColor = System.Drawing.Color.Red;
+            this.Product_add.Location = new System.Drawing.Point(24, 350);
             this.Product_add.Name = "Product_add";
             this.Product_add.Size = new System.Drawing.Size(112, 33);
             this.Product_add.TabIndex = 13;
@@ -170,7 +203,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.ForeColor = System.Drawing.Color.DarkOrange;
             this.label8.Location = new System.Drawing.Point(9, 125);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 21);
@@ -190,8 +223,11 @@
             this.ProdQtytxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.ProdQtytxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.ProdQtytxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ProdQtytxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ProdQtytxt.FocusedState.ForeColor = System.Drawing.Color.Black;
+            this.ProdQtytxt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProdQtytxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ProdQtytxt.HoverState.FillColor = System.Drawing.Color.White;
+            this.ProdQtytxt.HoverState.ForeColor = System.Drawing.Color.Black;
             this.ProdQtytxt.Location = new System.Drawing.Point(147, 169);
             this.ProdQtytxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ProdQtytxt.Name = "ProdQtytxt";
@@ -205,7 +241,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.ForeColor = System.Drawing.Color.DarkOrange;
             this.label7.Location = new System.Drawing.Point(9, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 21);
@@ -221,13 +257,14 @@
             this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.White;
+            this.guna2Button5.FillColor = System.Drawing.Color.LightGray;
             this.guna2Button5.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.DarkOrange;
+            this.guna2Button5.HoverState.FillColor = System.Drawing.Color.Gray;
             this.guna2Button5.HoverState.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button5.Location = new System.Drawing.Point(4, 187);
+            this.guna2Button5.Location = new System.Drawing.Point(71, 205);
             this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(130, 30);
+            this.guna2Button5.Size = new System.Drawing.Size(130, 46);
             this.guna2Button5.TabIndex = 17;
             this.guna2Button5.Text = "Category";
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
@@ -241,13 +278,14 @@
             this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.FillColor = System.Drawing.Color.White;
+            this.guna2Button4.FillColor = System.Drawing.Color.LightGray;
             this.guna2Button4.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.DarkOrange;
+            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.Gray;
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button4.Location = new System.Drawing.Point(4, 151);
+            this.guna2Button4.Location = new System.Drawing.Point(71, 153);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(130, 30);
+            this.guna2Button4.Size = new System.Drawing.Size(130, 46);
             this.guna2Button4.TabIndex = 16;
             this.guna2Button4.Text = "Sellers";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
@@ -261,7 +299,7 @@
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(50, 50);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(959, -1);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(1036, -1);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton1.Size = new System.Drawing.Size(47, 40);
@@ -281,8 +319,11 @@
             this.ProdNametxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.ProdNametxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.ProdNametxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ProdNametxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ProdNametxt.FocusedState.ForeColor = System.Drawing.Color.Black;
+            this.ProdNametxt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProdNametxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ProdNametxt.HoverState.FillColor = System.Drawing.Color.White;
+            this.ProdNametxt.HoverState.ForeColor = System.Drawing.Color.Black;
             this.ProdNametxt.Location = new System.Drawing.Point(147, 119);
             this.ProdNametxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ProdNametxt.Name = "ProdNametxt";
@@ -315,8 +356,11 @@
             this.ProdIdtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.ProdIdtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.ProdIdtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ProdIdtxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ProdIdtxt.FocusedState.ForeColor = System.Drawing.Color.Black;
+            this.ProdIdtxt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProdIdtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ProdIdtxt.HoverState.FillColor = System.Drawing.Color.White;
+            this.ProdIdtxt.HoverState.ForeColor = System.Drawing.Color.Black;
             this.ProdIdtxt.Location = new System.Drawing.Point(147, 70);
             this.ProdIdtxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ProdIdtxt.Name = "ProdIdtxt";
@@ -330,7 +374,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(313, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(193, 25);
@@ -346,19 +390,22 @@
             this.guna2Button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button7.FillColor = System.Drawing.Color.White;
+            this.guna2Button7.FillColor = System.Drawing.Color.LightGray;
             this.guna2Button7.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button7.ForeColor = System.Drawing.Color.DarkOrange;
+            this.guna2Button7.HoverState.FillColor = System.Drawing.Color.Gray;
             this.guna2Button7.HoverState.ForeColor = System.Drawing.Color.Red;
-            this.guna2Button7.Location = new System.Drawing.Point(4, 259);
+            this.guna2Button7.Location = new System.Drawing.Point(71, 311);
             this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.Size = new System.Drawing.Size(130, 30);
+            this.guna2Button7.Size = new System.Drawing.Size(130, 46);
             this.guna2Button7.TabIndex = 19;
             this.guna2Button7.Text = "Customers";
+            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.productreset);
             this.panel1.Controls.Add(this.prodrefresh);
             this.panel1.Controls.Add(this.categorycb_search);
             this.panel1.Controls.Add(this.categorycb);
@@ -377,10 +424,29 @@
             this.panel1.Controls.Add(this.ProdIdtxt);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(140, 54);
+            this.panel1.Location = new System.Drawing.Point(217, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(866, 598);
             this.panel1.TabIndex = 13;
+            // 
+            // productreset
+            // 
+            this.productreset.BackColor = System.Drawing.Color.White;
+            this.productreset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.productreset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.productreset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.productreset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.productreset.FillColor = System.Drawing.Color.LightGray;
+            this.productreset.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productreset.ForeColor = System.Drawing.Color.DarkOrange;
+            this.productreset.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.productreset.HoverState.ForeColor = System.Drawing.Color.Red;
+            this.productreset.Location = new System.Drawing.Point(215, 405);
+            this.productreset.Name = "productreset";
+            this.productreset.Size = new System.Drawing.Size(112, 33);
+            this.productreset.TabIndex = 23;
+            this.productreset.Text = "Reset";
+            this.productreset.Click += new System.EventHandler(this.productreset_Click);
             // 
             // prodrefresh
             // 
@@ -389,9 +455,11 @@
             this.prodrefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.prodrefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.prodrefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.prodrefresh.FillColor = System.Drawing.Color.White;
+            this.prodrefresh.FillColor = System.Drawing.Color.LightGray;
+            this.prodrefresh.FocusedColor = System.Drawing.Color.LightGray;
             this.prodrefresh.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prodrefresh.ForeColor = System.Drawing.Color.DarkOrange;
+            this.prodrefresh.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
             this.prodrefresh.HoverState.FillColor = System.Drawing.Color.Red;
             this.prodrefresh.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.prodrefresh.Location = new System.Drawing.Point(678, 42);
@@ -403,6 +471,7 @@
             // 
             // categorycb_search
             // 
+            this.categorycb_search.BackColor = System.Drawing.Color.White;
             this.categorycb_search.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categorycb_search.ForeColor = System.Drawing.Color.DarkOrange;
             this.categorycb_search.FormattingEnabled = true;
@@ -411,11 +480,11 @@
             this.categorycb_search.Size = new System.Drawing.Size(168, 24);
             this.categorycb_search.TabIndex = 21;
             this.categorycb_search.Text = "Select Category";
-            //this.categorycb_search.SelectedIndexChanged += new System.EventHandler(this.categorycb_search_SelectedIndexChanged);
             this.categorycb_search.SelectionChangeCommitted += new System.EventHandler(this.categorycb_search_SelectionChangeCommitted);
             // 
             // categorycb
             // 
+            this.categorycb.BackColor = System.Drawing.Color.White;
             this.categorycb.Font = new System.Drawing.Font("Century", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categorycb.ForeColor = System.Drawing.Color.DarkOrange;
             this.categorycb.FormattingEnabled = true;
@@ -429,7 +498,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.DarkOrange;
             this.label3.Location = new System.Drawing.Point(8, 282);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 21);
@@ -449,8 +518,11 @@
             this.ProdPricetxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.ProdPricetxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.ProdPricetxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ProdPricetxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ProdPricetxt.FocusedState.ForeColor = System.Drawing.Color.Black;
+            this.ProdPricetxt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProdPricetxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ProdPricetxt.HoverState.FillColor = System.Drawing.Color.White;
+            this.ProdPricetxt.HoverState.ForeColor = System.Drawing.Color.Black;
             this.ProdPricetxt.Location = new System.Drawing.Point(147, 221);
             this.ProdPricetxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ProdPricetxt.Name = "ProdPricetxt";
@@ -464,7 +536,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(9, 228);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 21);
@@ -475,7 +547,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Schoolbook", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.ForeColor = System.Drawing.Color.DarkOrange;
             this.label5.Location = new System.Drawing.Point(9, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 21);
@@ -490,17 +562,88 @@
             this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton2.ImageRotate = 0F;
             this.guna2ImageButton2.ImageSize = new System.Drawing.Size(68, 68);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(-21, 63);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(30, 54);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButton2.Size = new System.Drawing.Size(181, 66);
             this.guna2ImageButton2.TabIndex = 15;
             // 
+            // guna2ImageButton3
+            // 
+            this.guna2ImageButton3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton3.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton3.Image")));
+            this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton3.ImageRotate = 0F;
+            this.guna2ImageButton3.Location = new System.Drawing.Point(-5, 153);
+            this.guna2ImageButton3.Name = "guna2ImageButton3";
+            this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton3.Size = new System.Drawing.Size(70, 46);
+            this.guna2ImageButton3.TabIndex = 21;
+            // 
+            // guna2ImageButton4
+            // 
+            this.guna2ImageButton4.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton4.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton4.Image")));
+            this.guna2ImageButton4.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton4.ImageRotate = 0F;
+            this.guna2ImageButton4.Location = new System.Drawing.Point(-5, 207);
+            this.guna2ImageButton4.Name = "guna2ImageButton4";
+            this.guna2ImageButton4.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton4.Size = new System.Drawing.Size(70, 46);
+            this.guna2ImageButton4.TabIndex = 22;
+            // 
+            // guna2ImageButton5
+            // 
+            this.guna2ImageButton5.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton5.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton5.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton5.Image")));
+            this.guna2ImageButton5.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton5.ImageRotate = 0F;
+            this.guna2ImageButton5.Location = new System.Drawing.Point(-5, 259);
+            this.guna2ImageButton5.Name = "guna2ImageButton5";
+            this.guna2ImageButton5.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton5.Size = new System.Drawing.Size(70, 46);
+            this.guna2ImageButton5.TabIndex = 23;
+            // 
+            // guna2ImageButton6
+            // 
+            this.guna2ImageButton6.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton6.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton6.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton6.Image")));
+            this.guna2ImageButton6.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton6.ImageRotate = 0F;
+            this.guna2ImageButton6.Location = new System.Drawing.Point(-5, 311);
+            this.guna2ImageButton6.Name = "guna2ImageButton6";
+            this.guna2ImageButton6.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton6.Size = new System.Drawing.Size(70, 46);
+            this.guna2ImageButton6.TabIndex = 24;
+            // 
+            // guna2ImageButton7
+            // 
+            this.guna2ImageButton7.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton7.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton7.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton7.Image")));
+            this.guna2ImageButton7.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton7.ImageRotate = 0F;
+            this.guna2ImageButton7.Location = new System.Drawing.Point(-5, 606);
+            this.guna2ImageButton7.Name = "guna2ImageButton7";
+            this.guna2ImageButton7.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton7.Size = new System.Drawing.Size(70, 46);
+            this.guna2ImageButton7.TabIndex = 25;
+            // 
             // Product_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 655);
+            this.BackColor = System.Drawing.Color.Orange;
+            this.ClientSize = new System.Drawing.Size(1085, 655);
+            this.Controls.Add(this.guna2ImageButton7);
+            this.Controls.Add(this.guna2ImageButton6);
+            this.Controls.Add(this.guna2ImageButton5);
+            this.Controls.Add(this.guna2ImageButton4);
+            this.Controls.Add(this.guna2ImageButton3);
             this.Controls.Add(this.guna2Button8);
             this.Controls.Add(this.guna2Button6);
             this.Controls.Add(this.guna2Button5);
@@ -549,5 +692,11 @@
         private System.Windows.Forms.ComboBox categorycb;
         private Guna.UI2.WinForms.Guna2Button prodrefresh;
         private System.Windows.Forms.ComboBox categorycb_search;
+        private Guna.UI2.WinForms.Guna2Button productreset;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton4;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton5;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton6;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton7;
     }
 }

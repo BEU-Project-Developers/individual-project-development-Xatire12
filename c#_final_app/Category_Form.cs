@@ -33,35 +33,50 @@ namespace c__final_app
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            try
+            if (string.IsNullOrWhiteSpace(CatIdtxt.Text))
             {
-                Con.Open();
-                string query = "INSERT INTO CategoryTbl VALUES (" + CatIdtxt.Text + ", '" + CatNametxt.Text + "', '" + CatDesctxt.Text + "')";
-                SqlCommand cmd = new SqlCommand(query, Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Category Added Succesfully!");
-                Con.Close();
-                populate();
-                CatIdtxt.Text = "";
-                CatNametxt.Text = "";
-                CatDesctxt.Text = "";
+                MessageBox.Show("Missing Category ID");
+            }
+            else
+            {
+                // Check if CatIdtxt is a valid integer
+                if (!int.TryParse(CatIdtxt.Text, out int catId) || catId <= 0)
+                {
+                    MessageBox.Show("Please enter a valid positive integer for Category ID");
+                }
+                else
+                {
+                    try
+                    {
+                        Con.Open();
+                        string query = "INSERT INTO CategoryTbl VALUES (" + catId + ", '" + CatNametxt.Text + "', '" + CatDesctxt.Text + "')";
+                        SqlCommand cmd = new SqlCommand(query, Con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Category Added Successfully!");
+                        Con.Close();
+                        populate();
+                        CatIdtxt.Text = "";
+                        CatNametxt.Text = "";
+                        CatDesctxt.Text = "";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
-        private void populate()
+        private void populate()//Category table dan melumatlari cekib DataSet obyekti yaradaraq DataGridView a baglayir
         {
-            Con.Open();
-            string query = "select * from CategoryTbl";
-            SqlDataAdapter sda=new SqlDataAdapter(query,Con);
-            SqlCommandBuilder builder=new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            CategoriesDGV.DataSource = ds.Tables[0];
-            Con.Close();
+            Con.Open();//baglantini acir database ile
+            string query = "select * from CategoryTbl";//category tableden butun sutunlari cekir
+            SqlDataAdapter sda=new SqlDataAdapter(query,Con);//databaseden data cekmek ve DataSet e doldurmaq ucun istifade edilir
+            SqlCommandBuilder builder=new SqlCommandBuilder(sda);//SqlCommandBuilder sinfini istifade ederek SqlDataAdapter obyekti uzerinde add ve delete islemlerini avtomatiklesdirmek ucun istifade olunur
+            var ds = new DataSet();//data elde etmek ve islemek ucun
+            sda.Fill(ds);//SqlDataAdapter obyektini istifade ederek elde olunan melumatlari DataSete doldurur
+            CategoriesDGV.DataSource = ds.Tables[0];//Bu sıra, DataSet içindəki ilk cədvəli (Tables[0]) bir DataGridView nəzarətinə bağlayır. CategoriesDGV ehtimal ki, bir DataGridView nəzarətini təmsil edir.
+            Con.Close();//database ile baglanti close edilir
         }
         
         private void CategoriesDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -160,6 +175,21 @@ namespace c__final_app
             this.Hide();
             Login login = new Login();
             login.Show();
+        }
+
+        private void categoryreset_Click(object sender, EventArgs e)
+        {
+            
+            CatNametxt.Text = "";
+            CatDesctxt.Text = "";
+
+            }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            Customers customers = new Customers();
+            customers.Show();
+            this.Hide();
         }
     }
 

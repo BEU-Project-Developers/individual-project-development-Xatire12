@@ -16,7 +16,7 @@ namespace c__final_app
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Selling_Form());
+            Application.Run(new Form1());
         }
     }
 }

@@ -109,13 +109,15 @@
             this.username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.username.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.username.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.username.ForeColor = System.Drawing.Color.Black;
             this.username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.username.Location = new System.Drawing.Point(491, 221);
             this.username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.username.Name = "username";
             this.username.PasswordChar = '\0';
-            this.username.PlaceholderText = "";
+            this.username.PlaceholderForeColor = System.Drawing.SystemColors.HotTrack;
+            this.username.PlaceholderText = "Enter username";
             this.username.SelectedText = "";
             this.username.Size = new System.Drawing.Size(200, 34);
             this.username.TabIndex = 8;
@@ -129,16 +131,19 @@
             this.userpassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.userpassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.userpassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.userpassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.userpassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.userpassword.ForeColor = System.Drawing.Color.Black;
             this.userpassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.userpassword.Location = new System.Drawing.Point(491, 279);
             this.userpassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userpassword.Name = "userpassword";
             this.userpassword.PasswordChar = '\0';
-            this.userpassword.PlaceholderText = "";
+            this.userpassword.PlaceholderForeColor = System.Drawing.SystemColors.HotTrack;
+            this.userpassword.PlaceholderText = "Enter password";
             this.userpassword.SelectedText = "";
             this.userpassword.Size = new System.Drawing.Size(200, 34);
             this.userpassword.TabIndex = 9;
+            this.userpassword.Click += new System.EventHandler(this.userpassword_Click);
             // 
             // loginselectrole
             // 

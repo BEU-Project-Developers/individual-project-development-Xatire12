@@ -55,50 +55,85 @@ namespace c__final_app
         {
             try
             {
-                Con.Open();
-                string query = "INSERT INTO ProductsTbl VALUES (" + ProdIdtxt.Text + ", '" + ProdNametxt.Text + "', " + ProdQtytxt.Text + "," + ProdPricetxt.Text + ",'"+categorycb.SelectedValue.ToString()+"')";
-                SqlCommand cmd = new SqlCommand(query, Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Product Added Succesfully!");
-                Con.Close();
-                populate();
-                ProdIdtxt.Text = "";
-                ProdNametxt.Text = "";
-                ProdQtytxt.Text = "";
-                ProdPricetxt.Text = "";
+                // Check if ProdIdtxt is a valid integer
+                if (!int.TryParse(ProdIdtxt.Text, out int prodId) || prodId <= 0)
+                {
+                    MessageBox.Show("Please enter a valid positive integer for Product ID");
+                    return;
+                }
 
+                // Check if ProdNametxt has at least 2 characters
+                if (ProdNametxt.Text.Length < 2)
+                {
+                    MessageBox.Show("Product name should have at least 2 characters");
+                    return;
+                }
+
+                if (ProdQtytxt.Text == "" || ProdPricetxt.Text == "")
+                {
+                    MessageBox.Show("Missing Information for adding");
+                }
+                else
+                {
+                    Con.Open();
+                    string query = "INSERT INTO ProductsTbl VALUES (" + prodId + ", '" + ProdNametxt.Text + "', " + ProdQtytxt.Text + "," + ProdPricetxt.Text + ",'" + categorycb.SelectedValue.ToString() + "')";
+                    SqlCommand cmd = new SqlCommand(query, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Product Added Successfully!");
+                    Con.Close();
+                    populate();
+                    ProdIdtxt.Text = "";
+                    ProdNametxt.Text = "";
+                    ProdQtytxt.Text = "";
+                    ProdPricetxt.Text = "";
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
-       
+
         private void FillCategory()
         {
-            Con.Open();
-            SqlCommand cmd = new SqlCommand("select CatName from CategoryTbl", Con);
-            SqlDataReader rdr;
-            rdr = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Columns.Add("CatName", typeof(string));
-            dt.Load(rdr);
-            categorycb_search.ValueMember = "CatName";
-            categorycb_search.DataSource = dt;
-            categorycb.ValueMember = "CatName";
-            categorycb.DataSource = dt;
-            Con.Close();
+            try
+            {
+                Con.Open();
+                SqlCommand cmd = new SqlCommand("select CatName from CategoryTbl", Con);
+                SqlDataReader rdr;
+                rdr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("CatName", typeof(string));
+                dt.Load(rdr);
+                categorycb_search.ValueMember = "CatName";
+                categorycb_search.DataSource = dt;
+                categorycb.ValueMember = "CatName";
+                categorycb.DataSource = dt;
+                Con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void populate()
         {
-            Con.Open();
-            string query = "select * from ProductsTbl";
-            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            ProductsDGV.DataSource = ds.Tables[0];
-            Con.Close();
+            try
+            {
+                Con.Open();
+                string query = "select * from ProductsTbl";
+                SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+                SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+                var ds = new DataSet();
+                sda.Fill(ds);
+                ProductsDGV.DataSource = ds.Tables[0];
+                Con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Product_Form_Load(object sender, EventArgs e)
@@ -180,33 +215,43 @@ namespace c__final_app
             }
         }
 
-        /*private void categorycb_search_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Con.Open();
-            string query = "select * from ProductsTbl where ProdCat='" + categorycb_search.SelectedValue.ToString() + "'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            ProductsDGV.DataSource = ds.Tables[0];
-            Con.Close();
-        }*/
-
         private void categorycb_search_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            Con.Open();
-            string query = "select * from ProductsTbl where ProdCat='" + categorycb_search.SelectedValue.ToString() + "'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
-            var ds = new DataSet();
-            sda.Fill(ds);
-            ProductsDGV.DataSource = ds.Tables[0];
-            Con.Close();
+            try
+            {
+                Con.Open();
+                string query = "select * from ProductsTbl where ProdCat='" + categorycb_search.SelectedValue.ToString() + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+                SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+                var ds = new DataSet();
+                sda.Fill(ds);
+                ProductsDGV.DataSource = ds.Tables[0];
+                Con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message );
+            }
         }
 
         private void prodrefresh_Click(object sender, EventArgs e)
         {
             populate();
+        }
+
+        private void productreset_Click(object sender, EventArgs e)//reset atmaq ucun
+        {
+            ProdIdtxt.Text = "";
+            ProdNametxt.Text = "";
+            ProdPricetxt.Text = "";
+            ProdQtytxt.Text = "";
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            Customers customers = new Customers();
+            this.Hide();
+            this.Show();
         }
     }
 }

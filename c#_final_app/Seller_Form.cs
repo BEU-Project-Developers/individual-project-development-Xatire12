@@ -59,6 +59,7 @@ namespace c__final_app
             login.Show();
             this.Hide();
         }
+
         private void sellerDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {   //DGV dan select edende index of out erroru veresin deye bunu yaziriq
             if (e.RowIndex >= 0 && e.RowIndex < sellerDGV.Rows.Count)
@@ -74,26 +75,60 @@ namespace c__final_app
         //Add button
         private void selleradd_Click(object sender, EventArgs e)
         {
-            try
+            if (string.IsNullOrWhiteSpace(selleridtxt.Text) || string.IsNullOrWhiteSpace(sellernametxt.Text) || string.IsNullOrWhiteSpace(sellerpasswordtxt.Text))
             {
-                Con.Open();
-                string query = "INSERT INTO SellersTbl VALUES (" +selleridtxt.Text + ", '" +sellernametxt.Text + "', '" +selleragetxt.Text + "','" +sellermobiletxt.Text + "','" +sellerpasswordtxt.Text + "')";
-                SqlCommand cmd = new SqlCommand(query, Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Seller Added Succesfully!");
-                Con.Close();
-                populate();
-                selleridtxt.Text = "";
-                sellernametxt.Text = "";
-                selleragetxt.Text = "";
-                sellermobiletxt.Text = "";
-                sellerpasswordtxt.Text = "";
+                MessageBox.Show("Seller ID, Name, and Password are required.");
+            }
+            else
+            {
+                // Check if selleridtxt is a valid integer
+                if (!int.TryParse(selleridtxt.Text, out int sellerId) || sellerId <= 0)
+                {
+                    MessageBox.Show("Please enter a valid positive integer for Seller ID.");
+                }
+                // Check if sellernametxt has at least 2 characters
+                else if (sellernametxt.Text.Length < 2)
+                {
+                    MessageBox.Show("Seller name should have at least 2 characters.");
+                }
+                // Password validation
+                else if (sellerpasswordtxt.Text.Length < 6)
+                {
+                    MessageBox.Show("Password should have at least 6 characters.");
+                }
+                else if (!sellerpasswordtxt.Text.Any(char.IsLetter))
+                {
+                    MessageBox.Show("Password should contain at least one letter.");
+                }
+                else if (!sellerpasswordtxt.Text.Any(char.IsDigit))
+                {
+                    MessageBox.Show("Password should contain at least one digit.");
+                }
+                else
+                {
+                    try
+                    {
+                        Con.Open();
+                        string query = "INSERT INTO SellersTbl VALUES (" + sellerId + ", '" + sellernametxt.Text + "', '" + selleragetxt.Text + "','" + sellermobiletxt.Text + "','" + sellerpasswordtxt.Text + "')";
+                        SqlCommand cmd = new SqlCommand(query, Con);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Seller Added Successfully!");
+                        Con.Close();
+                        populate();
+                        selleridtxt.Text = "";
+                        sellernametxt.Text = "";
+                        selleragetxt.Text = "";
+                        sellermobiletxt.Text = "";
+                        sellerpasswordtxt.Text = "";
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
         }
 
         private void sellerupdate_Click(object sender, EventArgs e)
@@ -171,6 +206,22 @@ namespace c__final_app
         private void Seller_Form_Load(object sender, EventArgs e)
         {
             populate();
+        }
+
+        private void sellerreset_Click(object sender, EventArgs e)
+        {
+            selleridtxt.Text = "";
+            sellernametxt.Text = "";
+            sellermobiletxt.Text = "";
+            sellerpasswordtxt.Text = "";
+            selleragetxt.Text = "";
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)//customers sehifesine kecmek ucun
+        {
+            Customers customers = new Customers();
+            this.Hide();
+            customers.Show();
         }
     }
 }
